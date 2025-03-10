@@ -82,11 +82,11 @@ Once installed and configured:
 
 | AI Chat Window |
 |---|
-| ![Chat Window](https://i.postimg.cc/mPL7s6Cc/2.png) |
+| ![Chat Window](https://i.postimg.cc/2SvGns5x/2.png) |
 
 | Settings Page |
 |---|
-| ![Settings](https://i.postimg.cc/ykX02zg4/1.png) |
+| ![Settings](https://i.postimg.cc/02hZMk9Q/1.png) |
 
 
 ---
