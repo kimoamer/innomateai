@@ -1,0 +1,313 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.chatbot-toggler {
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #222222;
+  transition: all 0.2s ease;
+  z-index: 99999;
+}
+
+body.show-chatbot .chatbot-toggler {
+  transform: rotate(90deg);
+}
+
+.chatbot-toggler span {
+  color: #fff;
+  position: absolute;
+}
+
+.chatbot-toggler span:last-child,
+body.show-chatbot .chatbot-toggler span:first-child {
+  opacity: 0;
+}
+
+body.show-chatbot .chatbot-toggler span:last-child {
+  opacity: 1;
+}
+
+.chatbot {
+  position: fixed;
+  right: 35px;
+  bottom: 90px;
+  width: 420px;
+  height: 510px; /* Default height */
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.5);
+  transform-origin: bottom right;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+              0 32px 64px -48px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+}
+
+body.show-chatbot .chatbot {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.chatbot.expand_chat {
+  width: 700px;
+  height: 80vh; /* Expanded height */
+}
+
+.chatbot .chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keep spacing */
+  padding: 10px;
+  background: #161616;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  position: relative;
+}
+
+.chat-header .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between SVG and text */
+}
+
+.chat-header svg {
+  width: 30px;
+  height: 30px;
+}
+
+.chat-header h2 {
+  font-size: 1.4rem;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin: 0;
+}
+
+.chatbot .chat-header span {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+
+.chatbot .chatbox {
+  flex: 1; /* Take up remaining space */
+  overflow-y: auto;
+  padding: 30px 20px 70px 20px;
+  margin-bottom: 50px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 25px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+
+.chatbox .chat {
+  display: flex;
+  list-style: none;
+}
+
+.chatbox .outgoing {
+  margin: 20px 0;
+  justify-content: flex-end;
+}
+
+.chatbox .incoming span {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  cursor: default;
+  text-align: center;
+  line-height: 32px;
+  align-self: flex-end;
+  background: #313131;
+  border-radius: 4px;
+  margin: 0 10px 7px 0;
+}
+
+.chatbox .chat p {
+  white-space: pre-wrap;
+  padding: 12px 16px;
+  border-radius: 10px 10px 0 10px;
+  max-width: 75%;
+  color: #fff;
+  font-size: 0.95rem;
+  background: #494949;
+}
+
+.chatbox .incoming p {
+  border-radius: 10px 10px 10px 0;
+}
+
+.chatbox .chat p.error {
+  color: #721c24;
+  background: #f8d7da;
+}
+
+.chatbox .incoming p {
+  color: #000;
+  background: #f2f2f2;
+}
+
+.chatbot .chat-input {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding: 3px 20px;
+  border-top: 1px solid #ddd;
+  flex-shrink: 0; /* Prevent input area from shrinking */
+}
+
+.chat-input textarea {
+  height: 55px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: #fff;
+  max-height: 180px;
+  padding: 15px 15px 15px 0;
+  font-size: 0.95rem;
+}
+
+.chat-input span {
+  align-self: flex-end;
+  color: #3f3f3f;
+  cursor: pointer;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  font-size: 1.35rem;
+}
+
+.chat-input textarea:valid ~ span {
+  visibility: visible;
+}
+
+.close-btn {
+  display: none;
+}
+
+.dots-loader {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.dots-loader i {
+  width: 8px;
+  height: 8px;
+  background-color: #1c1d1d;
+  border-radius: 50%;
+  display: inline-block;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.dots-loader i:nth-child(1) { animation-delay: 0s; }
+.dots-loader i:nth-child(2) { animation-delay: 0.2s; }
+.dots-loader i:nth-child(3) { animation-delay: 0.4s; }
+
+/* Basic styling for the code block */
+.code-block {
+  background-color: #f4f4f4; /* Light gray background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 15px; /* Spacing inside the block */
+  overflow-x: auto; /* Horizontal scroll for long lines */
+  font-family: "Courier New", monospace; /* Monospace font for code */
+  font-size: 14px; /* Adjust font size */
+  color: #333; /* Text color */
+  white-space: pre-wrap; /* Preserve whitespace and wrap lines */
+}
+
+/* Optional: Add a label for the language */
+.code-block::before {
+  content: attr(data-language); /* Display the language */
+  display: block;
+  background-color: #ddd;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #555;
+  border-radius: 3px 3px 0 0;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+}
+
+@media (max-width: 490px) {
+  .chatbot-toggler {
+    right: 20px;
+    bottom: 20px;
+  }
+  .chatbot {
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    border-radius: 0;
+    width: 100%;
+  }
+  .chatbot .chatbox {
+    height: 90%;
+    padding: 25px 15px 100px;
+  }
+  .chatbot .chat-input {
+    padding: 5px 15px;
+  }
+
+  .chatbot .chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .chatbot .chat-header h2 {
+    flex-grow: 1;
+  }
+
+  .chatbot .chat-header .expand-btn {
+    right: 40px; /* Adjust spacing */
+    display: none;
+  }
+
+  .chatbot .chat-header .close-btn {
+    display: block;
+    right: 15px;
+  }
+}

@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-10 13:37:35.717209",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "authentication_section",
+  "enabled",
+  "gemini_api_key",
+  "permissions_data_handling",
+  "share_database_schema",
+  "share_and_handle__data",
+  "apply_user_permissions"
+ ],
+ "fields": [
+  {
+   "fieldname": "authentication_section",
+   "fieldtype": "Section Break",
+   "label": "Authentication"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "depends_on": "eval: doc.enabled == 1",
+   "fieldname": "gemini_api_key",
+   "fieldtype": "Small Text",
+   "label": " Gemini Api Key",
+   "mandatory_depends_on": "eval: doc.enabled == 1"
+  },
+  {
+   "depends_on": "eval: doc.enabled == 1",
+   "fieldname": "permissions_data_handling",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Permissions & Data Handling"
+  },
+  {
+   "default": "0",
+   "description": "Sharing the database schema allows the AI to understand the structure of your system, including its tables and fields. This helps the AI generate accurate queries and responses based on your data model.",
+   "fieldname": "share_database_schema",
+   "fieldtype": "Check",
+   "label": "Share database schema"
+  },
+  {
+   "default": "0",
+   "description": "* Warning : your data may be shared with others or published.",
+   "fieldname": "share_and_handle__data",
+   "fieldtype": "Check",
+   "label": "Share and handle  data "
+  },
+  {
+   "default": "0",
+   "fieldname": "apply_user_permissions",
+   "fieldtype": "Check",
+   "label": "Apply User Permissions"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-03-10 20:43:04.443896",
+ "modified_by": "Administrator",
+ "module": "InnomateAI",
+ "name": "ChatBot Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

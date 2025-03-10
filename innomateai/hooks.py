@@ -25,8 +25,11 @@ app_license = "agpl-3.0"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/innomateai/css/innomateai.css"
-# app_include_js = "/assets/innomateai/js/innomateai.js"
+app_include_css = ["https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0",
+                   "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0",
+                   "/assets/innomateai/css/style.css?version=1"
+                   ]
+app_include_js = ["/assets/innomateai/js/chatbotui.js?version=1"]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/innomateai/css/innomateai.css"
