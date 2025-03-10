@@ -80,10 +80,13 @@ Once installed and configured:
 
 ## Screenshots
 
-| AI Chat Window | Settings Page |
-|---|---|
-| ![Chat Window](https://i.postimg.cc/mPL7s6Cc/2.png) | ![Settings](https://i.postimg.cc/ykX02zg4/1.png) |
+| AI Chat Window |
+|---|
+| ![Chat Window](https://i.postimg.cc/mPL7s6Cc/2.png) |
 
+| Settings Page |
+|---|
+| ![Settings](https://i.postimg.cc/ykX02zg4/1.png) |
 
 
 ---
