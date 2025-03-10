@@ -23,7 +23,7 @@ Innomate AI is (one small step) a **powerful AI-driven chatbot assistant** desig
     cd ~/frappe-bench/
     git get_app https://github.com/kimoamer/innomateai.git
     source env/bin/activate
-    pip install -r apps/innomate_ai/requirements.txt
+    pip install -r apps/innomateai/requirements.txt
     deactivate
     ```
 
